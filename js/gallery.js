@@ -70,7 +70,7 @@ const images = [
 const gallery = document.querySelector('.gallery');
 let currentLightboxInstance = null;
 
-// Додаємо елементи галереї на основі масиву зображень
+// Добавляем элементы галереи на основе массива изображений
 function createGalleryItem({ preview, original, description }) {
   const galleryItem = document.createElement('li');
   galleryItem.classList.add('gallery-item');
@@ -91,7 +91,7 @@ function createGalleryItem({ preview, original, description }) {
   return galleryItem;
 }
 
-// Додаємо всі елементи галереї до ul.gallery
+// Добавляем все элементы галереи в ul.gallery
 function renderGallery(images) {
   const galleryItems = images.map(createGalleryItem);
   gallery.append(...galleryItems);
@@ -99,7 +99,7 @@ function renderGallery(images) {
 
 renderGallery(images);
 
-// Додаємо делегування подій для відкриття модального вікна
+// Добавляем делегирование событий для открытия модального окна
 gallery.addEventListener('click', handleGalleryClick);
 
 function handleGalleryClick(event) {
@@ -110,7 +110,7 @@ function handleGalleryClick(event) {
   if (target.classList.contains('gallery-image')) {
     const largeImageSrc = target.dataset.source;
 
-    // Використовуйте basicLightbox для створення модального вікна
+    // Используем basicLightbox для создания модального окна для создания модального окна
     currentLightboxInstance = basicLightbox.create(`
       <img src="${largeImageSrc}" alt="Large Image">
     `, {
@@ -126,7 +126,7 @@ function handleGalleryClick(event) {
   }
 }
 
-// Функція для обробки натискання клавіші "Escape"
+//Функция для обработки нажатия клавиши "Escape"
 function handleKeyDown(event) {
   if (event.key === 'Escape') {
     if (currentLightboxInstance) {
