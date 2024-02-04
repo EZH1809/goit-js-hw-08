@@ -6,7 +6,7 @@ ul {
   margin-top: 0;
   padding-left: 0;
 }
-li {
+ul li {
   list-style: none;
 }
 .gallery {
@@ -19,8 +19,15 @@ li {
   column-gap: 24px;
   row-gap: 24px;
 }
+.gallery :hover {
+  cursor: url('/images/hand-icon.svg'), auto;
+}
 .gallery img {
   width: 360px;
   height: 200px;
   object-fit: cover;
 }
+
+/* .custom-cursor {
+  cursor: url(../images/hand-icon.svg);
+} */
