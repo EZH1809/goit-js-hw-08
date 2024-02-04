@@ -4,10 +4,15 @@
 
 ul {
   margin-top: 0;
+  margin-bottom: 0;
   padding-left: 0;
 }
 ul li {
   list-style: none;
+}
+img {
+  display: block;
+  width: 100%;
 }
 .gallery {
   width: 1440px;
@@ -22,6 +27,7 @@ ul li {
 .gallery :hover {
   cursor: url('/images/hand-icon.svg'), auto;
 }
+
 .gallery img {
   width: 360px;
   height: 200px;

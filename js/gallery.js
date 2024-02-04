@@ -70,26 +70,26 @@ const images = [
 const gallery = document.querySelector('.gallery');
 let currentLightboxInstance = null;
 
-// Добавляем элементы галереи на основе массива изображений
+// Отрисовка галереи, добавляем элементы галереи на основе массива изображений
+
 function createGalleryItem({ preview, original, description }) {
+  const galleryItemHTML = `
+    <li class="gallery-item">
+      <a class="gallery-link" href="${original}">
+        <img class="gallery-image"
+        src="${preview}" 
+        data-source="${original}" 
+        alt="${description}">
+      </a>
+    </li>
+  `;
+
   const galleryItem = document.createElement('li');
-  galleryItem.classList.add('gallery-item');
-
-  const galleryLink = document.createElement('a');
-  galleryLink.classList.add('gallery-link');
-  galleryLink.href = original;
-
-  const galleryImage = document.createElement('img');
-  galleryImage.classList.add('gallery-image');
-  galleryImage.src = preview;
-  galleryImage.dataset.source = original;
-  galleryImage.alt = description;
-
-  galleryLink.appendChild(galleryImage);
-  galleryItem.appendChild(galleryLink);
+  galleryItem.insertAdjacentHTML('beforeend', galleryItemHTML);
 
   return galleryItem;
 }
+
 
 // Добавляем все элементы галереи в ul.gallery
 function renderGallery(images) {
@@ -98,6 +98,7 @@ function renderGallery(images) {
 }
 
 renderGallery(images);
+
 
 // Добавляем делегирование событий для открытия модального окна
 gallery.addEventListener('click', handleGalleryClick);
