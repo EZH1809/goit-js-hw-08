@@ -92,10 +92,12 @@ function createGalleryItem({ preview, original, description }) {
 
 
 // Добавляем все элементы галереи в ul.gallery
+
 function renderGallery(images) {
   const galleryItems = images.map(createGalleryItem);
   gallery.append(...galleryItems);
 }
+
 
 renderGallery(images);
 
@@ -112,6 +114,7 @@ function handleGalleryClick(event) {
     const largeImageSrc = target.dataset.source;
 
     // Используем basicLightbox для создания модального окна для создания модального окна
+    
     currentLightboxInstance = basicLightbox.create(`
       <img src="${largeImageSrc}" alt="Large Image">
     `, {
@@ -128,11 +131,9 @@ function handleGalleryClick(event) {
 }
 
 //Функция для обработки нажатия клавиши "Escape"
+
 function handleKeyDown(event) {
   if (event.key === 'Escape') {
-    if (currentLightboxInstance) {
-      currentLightboxInstance.close();
-    }
+    currentLightboxInstance.close();
   }
 }
-
