@@ -25,7 +25,7 @@ img {
   row-gap: 24px;
 }
 .gallery :hover {
-  cursor: url('./images/hand-icon.svg'), auto;
+  cursor: url('../images/hand-icon.svg'), auto;
 }
 
 .gallery img {
